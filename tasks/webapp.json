@@ -1,0 +1,22 @@
+[{
+        "name": "${container_name}",
+        "image": "${image}",
+        "portMappings": [{
+                "containerPort": ${container_port},
+                "hostPort": ${container_port}
+        }],
+        "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "ecs-logs",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "${app_name}"
+                }
+            },
+        "networkMode": "awsvpc",
+        "memory": 300,
+        "environment": [{
+                "name": "PORT",
+                "value": "${container_port}"
+        }]
+}]
