@@ -5,7 +5,7 @@
 
 ```
 module "ecs" {
-  source         = "/Users/steven/cds-projects/terraform/infra-modules/tf-ecs-fargate"
+  source         = "https://github.com/cds-snc/aws-ecs-fargate"
   environment    = "${var.environment}"
   task_name      = "${var.task_name}"
   container_name = "vac"
